@@ -11,8 +11,8 @@ def video_to_audio(video_path, audio_path):
     video = mp.VideoFileClip(video_path)
     video.audio.write_audiofile(audio_path)
 
-def transcribe_audio(audio_path, language="Cantonese"):
-    model = whisper.load_model("large",device=device)  # 你可以選擇 "tiny", "base", "small", "medium", 或 "large"
+def transcribe_audio(audio_path, language="Chinese"):
+    model = whisper.load_model("medium",device=device)  # 你可以選擇 "tiny", "base", "small", "medium", 或 "large"
     result = model.transcribe(audio_path, language=language)
     return result
 
